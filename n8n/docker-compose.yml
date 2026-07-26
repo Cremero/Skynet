@@ -1,0 +1,21 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - TZ=Europe/Madrid
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - ./data:/home/node/.n8n
+    restart: unless-stopped
+    networks:
+      - homelab
+networks:
+  homelab:
+    external: true

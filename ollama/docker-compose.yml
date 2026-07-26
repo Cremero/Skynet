@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./data:/root/.ollama
+    restart: unless-stopped
+    environment:
+      - OLLAMA_CONTEXT_LENGTH=8192
+      - OLLAMA_NUM_PARALLEL=1
+    networks:
+      - homelab
+
+networks:
+  homelab:
+    external: true

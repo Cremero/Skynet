@@ -1,0 +1,22 @@
+# Home Assistant - lo gestiona padre, no es mi secto por lo que no tocar
+home-assistant/
+
+# Jellyfin
+jellyfin/cache/
+jellyfin/config/
+jellyfin/media/
+
+# N8N (sensible)
+n8n/data/
+
+# El resto
+**/data/
+**/volumes/
+**/logs/
+.env
+*.env
+
+# Exclusiones
+CrowdSec/crowdsec/config/
+adguard/conf/
+adguard/work/

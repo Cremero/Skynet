@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec:latest
+    container_name: crowdsec
+    volumes:
+      - ./crowdsec/data:/var/lib/crowdsec/data
+      - ./crowdsec/config:/etc/crowdsec
+      - /var/log:/var/log:ro
+    environment:
+      - TZ=Europe/Madrid
+    ports:
+      - "8080:8080"
