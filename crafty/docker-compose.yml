@@ -1,0 +1,19 @@
+services:
+  crafty:
+    image: registry.gitlab.com/crafty-controller/crafty-4:latest
+    container_name: crafty-container
+    restart: always
+    environment:
+      - TZ=Etc/UTC
+    ports:
+      - "8112:8123"
+      - "8111:8443"
+      - "19132:19132/udp"
+      - "24454:24454/udp"
+      - "25500-25600:25500-25600"
+    volumes:
+      - ./logs:/crafty/logs
+      - ./servers:/crafty/servers
+      - ./config:/crafty/app/config
+      - ./import:/crafty/import
+      - ./backups:/crafty/backups

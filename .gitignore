@@ -20,3 +20,9 @@ n8n/data/
 CrowdSec/crowdsec/config/
 adguard/conf/
 adguard/work/
+
+# Crafty
+crafty/servers/
+crafty/backups/
+crafty/import/
+crafty/config/
